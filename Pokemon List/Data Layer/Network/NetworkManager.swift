@@ -16,11 +16,11 @@ final class NetworkManager {
     static var baseUrl = "https://pokeapi.co/api/v2/"
     
     // Endpoints
-    static var pokemonListUrl = baseUrl + "pokemon/"
-    static var pokemonDetailUrl = baseUrl + "detail/"
+    var pokemonListUrl = NetworkManager.baseUrl + "pokemon/"
+    var pokemonDetailUrl = NetworkManager.baseUrl + "detail/" // This is an example
     
     func getPokemonList(completion: @escaping (Response?) -> Void) {
-        guard let url = URL(string: NetworkManager.pokemonListUrl) else {
+        guard let url = URL(string: pokemonListUrl) else {
             completion(nil)
             return
         }
