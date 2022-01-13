@@ -65,9 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				493B8868278E09570099A054 /* Data Layer */,
+				497DB85727906BC800EBAD51 /* Scenes */,
 				493B8852278E09150099A054 /* AppDelegate.swift */,
 				493B8854278E09150099A054 /* SceneDelegate.swift */,
-				493B8856278E09150099A054 /* PokemonListVC.swift */,
 				493B8858278E09150099A054 /* Main.storyboard */,
 				493B885B278E09160099A054 /* Assets.xcassets */,
 				493B885D278E09160099A054 /* LaunchScreen.storyboard */,
@@ -101,6 +101,14 @@
 				493B886D278E0B760099A054 /* PokemonName.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		497DB85727906BC800EBAD51 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				493B8856278E09150099A054 /* PokemonListVC.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
