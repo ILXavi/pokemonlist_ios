@@ -51,5 +51,38 @@ final class NetworkManager {
         networkTask.resume()
     }
     
+    func getPokemonWith(detailURL: String, completion: @escaping (Pokemon?) -> Void){
+        guard let url = URL(string: detailURL) else {
+            completion(nil)
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let networkTask = URLSession.shared.dataTask(with: urlRequest) {
+            data, response, error in
+            
+            guard error == nil else {
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let pokemon = try decoder.decode(Pokemon.self, from: data)
+                completion(pokemon)
+            } catch {
+                completion(nil)
+            }
+        }
+        
+        networkTask.resume()
+        
+    }
+    
 }
 
